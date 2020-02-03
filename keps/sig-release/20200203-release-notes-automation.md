@@ -1,69 +1,22 @@
 ---
-title: KEP Template
+title: Release Notes Automation
 authors:
-  - "@janedoe"
-owning-sig: sig-xxx
+  - "@JamesLaverack"
+owning-sig: sig-release 
 participating-sigs:
-  - sig-aaa
-  - sig-bbb
 reviewers:
   - TBD
-  - "@alicedoe"
 approvers:
   - TBD
-  - "@oscardoe"
 editor: TBD
-creation-date: yyyy-mm-dd
-last-updated: yyyy-mm-dd
-status: provisional|implementable|implemented|deferred|rejected|withdrawn|replaced
+creation-date: 2020-02-03
+last-updated: 2020-02-03
+status: provisional
 see-also:
-  - "/keps/sig-aaa/20190101-we-heard-you-like-keps.md"
-  - "/keps/sig-bbb/20190102-everyone-gets-a-kep.md"
-replaces:
-  - "/keps/sig-ccc/20181231-replaced-kep.md"
-superseded-by:
-  - "/keps/sig-xxx/20190104-superceding-kep.md"
+  - "keps/sig-release/20190331-release-notes.md"
 ---
 
-# Title
-
-This is the title of the KEP.
-Keep it simple and descriptive.
-A good title can help communicate what the KEP is and should be considered as part of any review.
-
-The title should be lowercased and spaces/punctuation should be replaced with `-`.
-
-To get started with this template:
-1. **Pick a hosting SIG.**
-  Make sure that the problem space is something the SIG is interested in taking up.
-  KEPs should not be checked in without a sponsoring SIG.
-1. **Make a copy of this template.**
-  Copy this template into the owning SIG's directory (or KEP root directory, as appropriate) and name it `YYYYMMDD-my-title.md`, where `YYYYMMDD` is the date the KEP was first drafted.
-1. **Fill out the "overview" sections.**
-  This includes the Summary and Motivation sections.
-  These should be easy if you've preflighted the idea of the KEP with the appropriate SIG.
-1. **Create a PR.**
-  Assign it to folks in the SIG that are sponsoring this process.
-1. **Create an issue in kubernetes/enhancements, if the enhancement will be targeting changes to kubernetes/kubernetes**
-  When filing an enhancement tracking issue, please ensure to complete all fields in the template.
-1. **Merge early.**
-  Avoid getting hung up on specific details and instead aim to get the goal of the KEP merged quickly.
-  The best way to do this is to just start with the "Overview" sections and fill out details incrementally in follow on PRs.
-  View anything marked as a `provisional` as a working document and subject to change.
-  Aim for single topic PRs to keep discussions focused.
-  If you disagree with what is already in a document, open a new PR with suggested changes.
-
-The canonical place for the latest set of instructions (and the likely source of this file) is [here](/keps/YYYYMMDD-kep-template.md).
-
-The `Metadata` section above is intended to support the creation of tooling around the KEP process.
-This will be a YAML section that is fenced as a code block.
-See the KEP process for details on each of these items.
-
-## Table of Contents
-
-A table of contents is helpful for quickly jumping to sections of a KEP and for highlighting any additional information provided beyond the standard KEP template.
-
-Ensure the TOC is wrapped with <code>&lt;!-- toc --&rt;&lt;!-- /toc --&rt;</code> tags, and then generate with `hack/update-toc.sh`.
+# Release Notes Automation
 
 <!-- toc -->
 - [Release Signoff Checklist](#release-signoff-checklist)
@@ -121,13 +74,13 @@ Check these off as they are completed for the Release Team to track. These check
 
 ## Summary
 
-The `Summary` section is incredibly important for producing high quality user-focused documentation such as release notes or a development roadmap.
-It should be possible to collect this information before implementation begins in order to avoid requiring implementors to split their attention between writing release notes and implementing the feature itself.
-KEP editors, SIG Docs, and SIG PM should help to ensure that the tone and content of the `Summary` section is useful for a wide audience.
-
-A good summary is probably at least a paragraph in length.
+The Kubernetes release team produces release notes for every 'point' release in a cycle (e.g., alpha, beta, and release candidates).
+For each release a tool is used to generate updates to markdown and JSON release notes files, which are then merged by pull request.
+The goal of this KEP is to replace the manual process of executing this tool and preparing pull requests with an automatic system.
 
 ## Motivation
+
+
 
 This section is for explicitly listing the motivation, goals and non-goals of this KEP.
 Describe why the change is important and the benefits to users.
