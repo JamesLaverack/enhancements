@@ -10,7 +10,7 @@ approvers:
   - TBD
 editor: TBD
 creation-date: 2020-02-03
-last-updated: 2020-02-03
+last-updated: 2020-02-04
 status: provisional
 see-also:
   - "keps/sig-release/20190331-release-notes.md"
@@ -80,23 +80,23 @@ The goal of this KEP is to replace the manual process of executing this tool and
 
 ## Motivation
 
+The release team contains a role, Release Notes, dedicated to the management of this process. A big part of the early-cycle work for
+this role is running this tool on each point release according to specific instructions. Once for Markdown to be merged into `kubernetes/sig-release`, and once for JSON to be merged into `kubernetes-sigs/release-notes`. The latter also includes a minor extra
+changes: the name of the new JSON file is added to an array in a TypeScript file, and a JSON "prettifyier" is run over the generated JSON. Given the highly repetitive nature of this task, it is a prime target for automation.
 
-
-This section is for explicitly listing the motivation, goals and non-goals of this KEP.
-Describe why the change is important and the benefits to users.
-The motivation section can optionally provide links to [experience reports][] to demonstrate the interest in a KEP within the wider Kubernetes community.
-
-[experience reports]: https://github.com/golang/go/wiki/ExperienceReports
+The goal of this enhancement is to streamline the work of the release team, and ultimately to facilitate the removal of the release
+notes role or it's merging with another role in the team.
 
 ### Goals
 
-List the specific goals of the KEP.
-How will we know that this has succeeded?
+- Automate the creation of the release notes pull requests on the tagging of a new version of `kubernetes/kubernetes`.
 
 ### Non-Goals
 
-What is out of scope for this KEP?
-Listing non-goals helps to focus discussion and make progress.
+- Deciding the future of the release notes role in the release team.
+- Changes to the release notes tool (`github.com/kubenetes/release/cmd/release-notes`) or its output.
+- Changes to the way the release notes are formatted, in either Markdown or JSON.
+- Automatically updating release notes without a pull request.
 
 ## Proposal
 
