@@ -2,6 +2,7 @@
 title: Release Notes Automation
 authors:
   - "@JamesLaverack"
+  - "@puerco"
 owning-sig: sig-release 
 participating-sigs:
 reviewers:
@@ -84,6 +85,8 @@ The release team contains a role, Release Notes, dedicated to the management of 
 this role is running this tool on each point release according to specific instructions. Once for Markdown to be merged into `kubernetes/sig-release`, and once for JSON to be merged into `kubernetes-sigs/release-notes`. The latter also includes a minor extra
 changes: the name of the new JSON file is added to an array in a TypeScript file, and a JSON "prettifyier" is run over the generated JSON. Given the highly repetitive nature of this task, it is a prime target for automation.
 
+The authors recognize that incomplete or otherwise invalid titles and summaries in Pull Requests represent a challenge to achieve a quality document derived from the automation of the Release Notes process. Said problem is not exacerbated or improved by the proposed changes.
+
 The goal of this enhancement is to streamline the work of the release team, and ultimately to facilitate the removal of the release
 notes role or it's merging with another role in the team.
 
@@ -97,6 +100,7 @@ notes role or it's merging with another role in the team.
 - Changes to the release notes tool (`github.com/kubenetes/release/cmd/release-notes`) or its output.
 - Changes to the way the release notes are formatted, in either Markdown or JSON.
 - Automatically updating release notes without a pull request.
+- Proposing a solution that deals with bad summaries and titles in Pull Requests.
 
 ## Proposal
 
